@@ -1,0 +1,26 @@
+
+{
+    "name": "A browser action with a popup that changes the page color",
+    "description": "Change the current page color",
+    "version": "1.0",
+    "permissions": [
+      "activeTab",
+      "tabs"
+    ],
+    "content_scripts":[
+        {
+            "matches" : ["https://docs.google.com/presentation/d/e/2PACX-1vSG6GxxICjTBy2GFwE6rNlir958QFeJqiasuPMKc-PIOINoaS_16xfo3uLqHBiVjmYc3FTB-uCyrDWX/pub?*"
+        ],
+            "js" : ["refresh.js"]
+        }
+    ],
+    "background":{
+        "scripts" :["background.js"],
+        "persistent" : false
+    },
+    "browser_action": {
+        "default_title": "Set this page's color.",
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 2
+  }
